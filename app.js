@@ -10,15 +10,15 @@ class Dot {
 		this.id = Math.floor(Math.random() * canvas.width);
 		this.x = x == null ? Math.floor(Math.random() * canvas.width) : x;
 		this.y = y == null ? Math.floor(Math.random() * canvas.height) : y;
-		this.size = Math.floor(Math.random() * 2) + 30;
-		this.speed = 2;
+		this.size = Math.floor(Math.random() * 2) + 7;
+		this.speed = 0.3;
 		this.direction = {
 			x: Math.random() * (Math.round(Math.random()) ? this.speed : -this.speed),
 			y: Math.random() * (Math.round(Math.random()) ? this.speed : -this.speed),
 		};
 		this.opacity = 0;
 		this.lineOpacity = 0;
-		this.maxDistance = 1200;
+		this.maxDistance = 300;
 	}
 	draw() {
 		if (this.opacity < 1) {
@@ -60,7 +60,7 @@ class Dot {
 		context.moveTo(x, y);
 		context.lineTo(this.x, this.y);
 		context.strokeStyle = `rgba(200, 200, 200, ${this.lineOpacity})`;
-		context.lineWidth = 10;
+		context.lineWidth = 2;
 		context.stroke();
 	}
 }
